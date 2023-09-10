@@ -48,11 +48,11 @@ public function insert($query){
   
 // Update data
  public function update($query){
- $update_row = $this->link->query($query) or 
-   die($this->link->error.__LINE__);
+ $update_row = $this->link->query($query) or die($this->link->error.__LINE__);
  if($update_row){
-  return $update_row;
+  header("location:index.php?msg=".urlencode("Data updated Successfully"));
  } else {
+  die("Error: (" . $this->link->errno.")" . $this->link->error);
   return false;
   }
  }

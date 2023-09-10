@@ -1,6 +1,7 @@
 <?php
 
 include "header.php";
+include "database/config.php";
 include "database/Database.php";
 ?>
  <section class="maincontent">
@@ -10,6 +11,17 @@ include "database/Database.php";
     $query = "SELECT * FROM tbl_user";
     $read = $db->select($query);
  ?>
+ <?php 
+    if(isset($_GET['msg'])){
+        echo "<span style='color:green'>" . $_GET['msg'] . "</span>";
+    }
+ ?>
+ <?php 
+if(isset($error)){
+ echo "<span style='color:red'>".$error."</span>";
+}
+?>
+
 <a href="create.php">Create</a>
 
 <table class="tblone">
@@ -31,8 +43,8 @@ while($row = $read->fetch_assoc()){
  <td><?php echo $row['last_name']; ?></td>
  <td><?php echo $row['email']; ?></td>
  <td>
-    <a href="update.php?id=<?php echo urlencode($row['id']); ?>">Edit</a>
-    <a href="delete.php?id=<?php echo urlencode($row['id']); ?>">Delete</a>
+    <a class="btn btn-sm btn-warning" href="update.php?id=<?php echo urlencode($row['id']); ?>">Edit</a>
+    <a class="btn btn-sm btn-danger" href="delete.php?id=<?php echo urlencode($row['id']); ?>">Delete</a>
 </td>
 </tr>
 
