@@ -9,7 +9,7 @@ include "database/Database.php";
  $query = "SELECT * FROM tbl_user WHERE id=$id";
  $getData = $db->select($query)->fetch_assoc();
  
- if(isset($_POST['submit'])){
+ if(isset($_POST['update'])){
     $fname  = mysqli_real_escape_string($db->link, $_POST['first_name']);
     $lname  = mysqli_real_escape_string($db->link, $_POST['last_name']);
     $email = mysqli_real_escape_string($db->link, $_POST['email']);
@@ -54,7 +54,7 @@ if(isset($error)){
   <td></td>
   <td>
   <div class="d-grid gap-2 d-md-block">
-  <input type="submit" name="submit" value="Submit" class="btn btn-sm btn-primary"  />
+  <input type="submit" name="update" value="Update" class="btn btn-sm btn-primary"  />
   <input type="reset" Value="Clear" class="btn btn-sm btn-warning" />
   <input type="submit"  Value="Delete" class="btn btn-sm btn-danger" />
   </div>
