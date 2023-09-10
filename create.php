@@ -4,7 +4,7 @@ include "database/Database.php";
 ?>
 <?php 
  $db = new Database();
- 
+
 if(isset($_POST['submit'])){
  $fname  = mysqli_real_escape_string($db->link, $_POST['first_name']);
  $lname  = mysqli_real_escape_string($db->link, $_POST['last_name']);
@@ -32,7 +32,7 @@ if(isset($error)){
 ?>
 
 
-<form action="create.php" method="post">
+<form class="p-4" action="create.php" method="post">
 <table>
  <tr>
   <td class="form-label">First Name</td>
@@ -52,11 +52,11 @@ if(isset($error)){
   <td></td>
   <td>
   <input type="submit" name="submit" value="Submit" class="btn btn-sm btn-primary"/>
-  <input type="reset" Value="Cancel" class="btn btn-sm btn-danger" />
+  <input type="reset" Value="Clear" class="btn btn-sm btn-danger" />
   </td>
  </tr>
 
 </table>
 </form>
-<a href="index.php">Go Back</a>
+<a class="btn btn-success" href="index.php">Go Back</a>
 <?php include "footer.php"; ?>

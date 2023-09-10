@@ -1,7 +1,6 @@
 <?php
 
 include "header.php";
-include "database/config.php";
 include "database/Database.php";
 ?>
  <section class="maincontent">
@@ -11,9 +10,24 @@ include "database/Database.php";
     $query = "SELECT * FROM tbl_user";
     $read = $db->select($query);
  ?>
+<?php
+    if(isset($_GET['id'])){
+         $id = $_GET['id'];
+         $query = "DELETE FROM tbl_user WHERE id = $id";
+         $deleteData = $db->delete($query);
+   
+         if($deleteData){
+            echo "Record with ID $id has been deleted successfully";
+         }else{
+            echo "Error: Unable to delete the record";
+         }
+      }
+   
+?>
+
  <?php 
     if(isset($_GET['msg'])){
-        echo "<span style='color:green'>" . $_GET['msg'] . "</span>";
+        echo "<span style='color:green'>" . $_GET['msg'] . "</span> <br>";
     }
  ?>
  <?php 
@@ -43,8 +57,10 @@ while($row = $read->fetch_assoc()){
  <td><?php echo $row['last_name']; ?></td>
  <td><?php echo $row['email']; ?></td>
  <td>
-    <a class="btn btn-sm btn-warning" href="update.php?id=<?php echo urlencode($row['id']); ?>">Edit</a>
-    <a class="btn btn-sm btn-danger" href="delete.php?id=<?php echo urlencode($row['id']); ?>">Delete</a>
+    <a class="btn btn-sm btn-warning" href="update.php?id=<?php echo urlencode($row['id']); ?>"><i class="fa-solid fa-pencil"></i></a>
+    <form method="post">
+    <a class="btn btn-sm btn-danger" href="index.php?id=<?php echo urlencode($row['id']); ?>"><i class="fa-solid fa-trash-can"></i></a>
+    </form>
 </td>
 </tr>
 

@@ -27,6 +27,12 @@ include "database/Database.php";
    }
 ?>
 
+<?php
+    if(isset($_POST['delete'])){
+        $query = "DELETE FROM tbl_user WHERE id = $id";
+        $deleteData = $db->delete($query);
+    }
+?>
 
 <?php 
 if(isset($error)){
@@ -56,7 +62,7 @@ if(isset($error)){
   <div class="d-grid gap-2 d-md-block">
   <input type="submit" name="update" value="Update" class="btn btn-sm btn-primary"  />
   <input type="reset" Value="Clear" class="btn btn-sm btn-warning" />
-  <input type="submit"  Value="Delete" class="btn btn-sm btn-danger" />
+  <button type="submit" name="delete" class="btn btn-sm btn-danger" >delete </button>
   </div>
   </td>
  </tr>
