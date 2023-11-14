@@ -1,46 +1,68 @@
-body{font-family:verdana}
-
-.phpcoding{
-    width:900px; 
-    margin: 0 auto;
-    background:#ddd;
+body {
+  font-family: verdana;
 }
 
-.headeroption, .footeroption{
-    background:#444;
-    color:#fff;
-    text-align:center;
-    padding:20px;
+.phpcoding {
+  width: 900px;
+  margin: 0 auto;
+  background: #ddd;
 }
 
-.headeroption h2, .footeroption h2{margin:0;font-size:24px}
+.headeroption,
+.footeroption {
+  background: #444;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
 
-.maincontent{min-height:400px;padding:20px;font-size:18px}
+.headeroption h2,
+.footeroption h2 {
+  margin: 0;
+  font-size: 24px;
+}
 
-p{margin:0}
+.maincontent {
+  min-height: 400px;
+  padding: 20px;
+  font-size: 18px;
+}
 
-input[type="text"]{width:238px;padding:5px;}
+p {
+  margin: 0;
+}
 
-select{
-    font-size:18px;
-    padding:2px 5px;
-    width:250px;
+input[type="text"] {
+  width: 238px;
+  padding: 5px;
+}
+
+select {
+  font-size: 18px;
+  padding: 2px 5px;
+  width: 250px;
 }
 /* Table Design */
-.tblone{
-    width:100%;
-    border:1px solid #fff;
-    margin:20px 0
+.tblone {
+  width: 100%;
+  border: 1px solid #fff;
+  margin: 10px 0;
 }
-.tblone td{
-    padding:5px 10px;
-    text-align:center;
+.tblone td {
+  padding: 5px 10px;
+  text-align: center;
 }
-table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
-table.tblone tr:nth-child(2n){background:#f1f1f1;height:30px;}
+table.tblone tr:nth-child(2n + 1) {
+  background: #fff;
+  height: 30px;
+}
+table.tblone tr:nth-child(2n) {
+  background: #f1f1f1;
+  height: 30px;
+}
 /* Form Design */
-#myform{
-    width:400px;
-    border:1px solid #fff;
-    padding:10px;
+#myform {
+  width: 400px;
+  border: 1px solid #fff;
+  padding: 10px;
 }
