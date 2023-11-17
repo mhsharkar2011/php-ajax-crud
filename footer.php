@@ -42,7 +42,12 @@
             email: email
           },
           success: function(data) {
-            loadTable();
+            if (data == 1) {
+              loadTable();
+              $("#addForm").trigger("reset");
+            } else {
+              alert("Can't save data. Check Unique email id");
+            }
           }
         });
       }
@@ -50,7 +55,8 @@
     });
 
     //Delete Records
-    $(document).on("click", ".delete-btn", function() {
+    $(document).on("click", "#delete-btn", function(e) {
+      e.preventDefault();
       if (confirm("Do you really want to delete this record ?")) {
         var userId = $(this).data("id");
         var element = this;
@@ -62,12 +68,9 @@
           },
           success: function(data) {
             if (data == 1) {
-              $(element).closest("tr").fadeOut();
-              loadTable();
-            } else {
-              $("#error-message").html("Can't Delete Record.").slideDown();
-              $("#success-message").slideUp();
+              $(element).closest('tr').fadeOut();
             }
+            loadTable();
           }
         });
       }

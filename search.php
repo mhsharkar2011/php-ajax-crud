@@ -5,10 +5,9 @@ include "database/Database.php";
 $search_value = $_POST["search"];
 
 $db = new Database();
-// $query = "SELECT * FROM tbl_user ORDER BY id DESC LIMIT 5";
 
-$sql = "SELECT * FROM tbl_user WHERE first_name LIKE '%{$search_value}%' OR last_name LIKE '%{$search_value}%'";
-$result = $db->select($sql) or die("SQL Query Failed: ");
+$query = "SELECT * FROM tbl_user WHERE first_name LIKE '%{$search_value}%' OR last_name LIKE '%{$search_value}%' OR email LIKE '%{$search_value}%' ORDER BY id DESC";
+$result = $db->select($query) or die("SQL Query Failed: ");
 $rowCount = mysqli_num_rows($result);
 echo "Row count: $rowCount";
 $output = "";
@@ -29,7 +28,7 @@ if (mysqli_num_rows($result) > 0) {
         <td>{$row["email"]}</td>
         <td align='center'>
         <button class='btn btn-sm btn-warning edit-btn' data-eid='{$row['id']}'><i class='fa-solid fa-pencil'></i></button>
-        <button class='btn btn-sm btn-danger delete-btn' data-id='{$row['id']}'><i class='fa-solid fa-trash'></i></button>
+        <button type='submit' class='btn btn-sm btn-danger' id='delete-btn' data-id='{$row['id']}'><i class='fa-solid fa-trash'></i></button>
         </td></tr>";
     }
     $output .= "</table>";

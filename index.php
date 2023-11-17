@@ -2,20 +2,19 @@
 include "header.php";
 ?>
 <section class="maincontent">
-   <div class="row">
-      <div class="col">
-         <button type="button" class="btn btn-secondary" onclick="window.location.reload();"><i class="fa-solid fa-arrows-rotate"></i></button>
-         <a class="btn btn-info" href="create.php">Create</a>
-      </div>
-      <div class="col">
+   <div class="row justify-content-end">
+      <div class="col col-lg-5">
          <div id="search-bar">
             <label>Search :</label>
             <input type="text" id="search" autocomplete="off">
          </div>
       </div>
+      <div class="col col-lg-2">
+         <button type="button" class="btn btn-secondary" onclick="window.location.reload();"><i class="fa-solid fa-arrows-rotate"></i></button>
+      </div>
    </div>
    <!-- Insert User Data Table -->
-   <form class="p-4">
+   <form class="p-4" id="addForm">
       <table>
          <tr>
             <td><input type="text" class="form-control mx-2" id="fname" placeholder="First Name" /></td>
