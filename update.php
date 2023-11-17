@@ -60,7 +60,7 @@ if (isset($error)) {
                 <div class="d-grid gap-2 d-md-block">
                     <button type="submit" name="update" class="btn btn-sm btn-primary"> Update</button>
                     <input type="reset" Value="Clear" class="btn btn-sm btn-warning" />
-                    <button type="submit" name="delete" class="btn btn-sm btn-danger"><i class="fa-solid fa-pencil"></i></button>
+                    <button type="submit" name="delete" class="btn btn-sm btn-danger">Delete</button>
                 </div>
             </td>
         </tr>
