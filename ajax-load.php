@@ -1,7 +1,7 @@
 <?php
 include "database/Database.php";
 $db = new Database();
-$query = "SELECT * FROM tbl_user ORDER BY id DESC LIMIT 5";
+$query = "SELECT * FROM tbl_user ORDER BY id DESC LIMIT 15";
 $result = $db->select($query);
 $rowCount = mysqli_num_rows($result);
 echo "Row count: $rowCount";

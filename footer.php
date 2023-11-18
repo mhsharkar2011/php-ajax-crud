@@ -45,8 +45,11 @@
             if (data == 1) {
               loadTable();
               $("#addForm").trigger("reset");
+              $("#success-message").html("Data Inserted Successfully.").slideDown();
+              $("#error-message").slideUp();
             } else {
-              alert("Can't save data. Check Unique email id");
+              $("#error-message").html("Can't save data. Check Unique email id").slideDown();
+              $("#success-message").slideUp();
             }
           }
         });
@@ -97,7 +100,7 @@
     $("#search").on("keyup", function() {
       var search_term = $(this).val();
       $.ajax({
-        url: "search.php",
+        url: "ajax-search.php",
         type: "POST",
         data: {
           search: search_term

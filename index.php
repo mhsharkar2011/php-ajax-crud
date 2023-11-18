@@ -5,26 +5,40 @@ include "header.php";
    <div class="row justify-content-end">
       <div class="col col-lg-5">
          <div id="search-bar">
-            <label>Search :</label>
-            <input type="text" id="search" autocomplete="off">
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text">Search</span>
+               </div>
+               <input type="text" id="search" autocomplete="off" class="form-control" />
+            </div>
          </div>
       </div>
-      <div class="col col-lg-2">
+      <div class="col col-lg-1">
          <button type="button" class="btn btn-secondary" onclick="window.location.reload();"><i class="fa-solid fa-arrows-rotate"></i></button>
       </div>
    </div>
    <!-- Insert User Data Table -->
-   <form class="p-4" id="addForm">
-      <table>
-         <tr>
-            <td><input type="text" class="form-control mx-2" id="fname" placeholder="First Name" /></td>
-            <td><input type="text" class="form-control mx-2" id="lname" placeholder="Last Name" /></td>
-            <td><input type="text" class="form-control mx-2" id="email" placeholder="Email" /></td>
-            <td><button type="submit" id="user-save" class="btn btn-sm btn-secondary">Save</button></td>
-         </tr>
-      </table>
-   </form>
-   <!-- Load Table Data -->
-   <table class="tblone" id="table-data"></table>
+   <div class=" justify-content-center">
+      <form class="p-4" id="addForm">
+            <div class="row">
+            <div class="col">
+               <input type="text" class="form-control" id="fname" placeholder="First Name">
+            </div>
+           <div class="col">
+               <input type="text" class="form-control" id="lname" placeholder="Last Name">
+            </div>
+           <div class="col">
+               <input type="text" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="col-lg-1">
+            <button type="submit" id="user-save" class="btn btn-md btn-secondary">Save</button>
+            </div>
+            </div>
+         </form>
+      </div>
+         <!-- Load Table Data -->
+         <table class="tblone" id="table-data"></table>
+         <div id="error-message"></div>
+         <div id="success-message"></div>
 </section>
 <?php include "footer.php"; ?>
