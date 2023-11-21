@@ -106,11 +106,12 @@
         var userId = $("#edit-id").val();
         var fname = $("#edit-fname").val();
         var lname = $("#edit-lname").val();
+        var email = $("#edit-email").val();
 
         $.ajax({
           url: "ajax-update.php",
           type : "POST",
-          data : {id: userId, first_name: fname, last_name: lname},
+          data : {id: userId, first_name: fname, last_name: lname,email:email},
           success: function(data) {
             if(data == 1){
               $("#modal").hide();
