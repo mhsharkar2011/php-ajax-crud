@@ -20,25 +20,33 @@ include "header.php";
    <!-- Insert User Data Table -->
    <div class=" justify-content-center">
       <form class="p-4" id="addForm">
-            <div class="row">
+         <div class="row">
             <div class="col">
                <input type="text" class="form-control" id="fname" placeholder="First Name">
             </div>
-           <div class="col">
+            <div class="col">
                <input type="text" class="form-control" id="lname" placeholder="Last Name">
             </div>
-           <div class="col">
+            <div class="col">
                <input type="text" class="form-control" id="email" placeholder="Email">
             </div>
             <div class="col-lg-1">
-            <button type="submit" id="user-save" class="btn btn-md btn-secondary">Save</button>
+               <button type="submit" id="user-save" class="btn btn-md btn-secondary">Save</button>
             </div>
-            </div>
-         </form>
+         </div>
+      </form>
+   </div>
+   <!-- Load Table Data -->
+   <table class="tblone" id="table-data"></table>
+   <div id="error-message"></div>
+   <div id="success-message"></div>
+   <div id="modal">
+      <div id="modal-form">
+         <h1>Edit Form</h1>
+         <table cellpadding="10px" width="100%">
+         </table>
+         <div id="close-btn">X</div>
       </div>
-         <!-- Load Table Data -->
-         <table class="tblone" id="table-data"></table>
-         <div id="error-message"></div>
-         <div id="success-message"></div>
+   </div>
 </section>
 <?php include "footer.php"; ?>

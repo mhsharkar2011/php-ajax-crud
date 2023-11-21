@@ -85,7 +85,7 @@
       var id = $(this).data("eid");
 
       $.ajax({
-        url: "load-update-form.php",
+        url: "ajax-load-update-modal.php",
         type: "POST",
         data: {
           id: id
@@ -95,6 +95,30 @@
         }
       })
     });
+
+    //Hide Modal Box
+    $("#close-btn").on("click",function(){
+      $("#modal").hide();
+    });
+
+    //Save Update Form
+    $(document).on("click","#edit-submit", function(){
+        var stuId = $("#edit-id").val();
+        var fname = $("#edit-fname").val();
+        var lname = $("#edit-lname").val();
+
+        $.ajax({
+          url: "ajax-update-form.php",
+          type : "POST",
+          data : {id: stuId, first_name: fname, last_name: lname},
+          success: function(data) {
+            if(data == 1){
+              $("#modal").hide();
+              loadTable();
+            }
+          }
+        })
+      });
 
     // Live Search
     $("#search").on("keyup", function() {
