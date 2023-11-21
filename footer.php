@@ -103,14 +103,14 @@
 
     //Save Update Form
     $(document).on("click","#edit-submit", function(){
-        var stuId = $("#edit-id").val();
+        var userId = $("#edit-id").val();
         var fname = $("#edit-fname").val();
         var lname = $("#edit-lname").val();
 
         $.ajax({
-          url: "ajax-update-form.php",
+          url: "ajax-update.php",
           type : "POST",
-          data : {id: stuId, first_name: fname, last_name: lname},
+          data : {id: userId, first_name: fname, last_name: lname},
           success: function(data) {
             if(data == 1){
               $("#modal").hide();
