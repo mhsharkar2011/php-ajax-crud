@@ -6,7 +6,7 @@ include "database/Database.php";
 <?php
 $id = $_GET['id'];
 $db = new Database();
-$query = "SELECT * FROM tbl_user WHERE id=$id";
+$query = "SELECT * FROM users WHERE id=$id";
 $getData = $db->select($query)->fetch_assoc();
 if (isset($_POST['update'])) {
     $fname  = mysqli_real_escape_string($db->link, $_POST['first_name']);

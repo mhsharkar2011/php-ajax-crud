@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
  if($fname == '' || $lname == '' || $email == ''){
   $error = "Field must not be Empty !!";
  } else {
-  $query = "INSERT INTO tbl_user(first_name, last_name, email) 
+  $query = "INSERT INTO users(first_name, last_name, email) 
    Values('$fname', '$lname', '$email')";
   $create = $db->insert($query);
  }

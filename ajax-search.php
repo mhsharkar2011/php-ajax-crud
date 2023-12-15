@@ -6,7 +6,7 @@ $search_value = $_POST["search"];
 
 $db = new Database();
 
-$query = "SELECT * FROM tbl_user WHERE first_name LIKE '%{$search_value}%' OR last_name LIKE '%{$search_value}%' OR email LIKE '%{$search_value}%' ORDER BY id DESC";
+$query = "SELECT * FROM users WHERE first_name LIKE '%{$search_value}%' OR last_name LIKE '%{$search_value}%' OR email LIKE '%{$search_value}%' ORDER BY id DESC";
 $result = $db->select($query) or die("SQL Query Failed: ");
 $rowCount = mysqli_num_rows($result);
 echo "Row count: $rowCount";

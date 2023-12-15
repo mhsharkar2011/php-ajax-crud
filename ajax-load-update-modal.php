@@ -3,7 +3,7 @@ include "database/Database.php";
 $db = new Database();
 
 $id = $_POST["id"];
-$query = "SELECT * FROM tbl_user WHERE id = {$id}";
+$query = "SELECT * FROM users WHERE id = {$id}";
 $result = $db->select($query) or die("SQL Query Failed.");
 $output = "";
 if(mysqli_num_rows($result) > 0 ){
